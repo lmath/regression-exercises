@@ -1,2 +1,10 @@
 *.class
 *.log
+
+.DS_Store
+.bundle
+.idea
+.idea_modules
+*.sublime-project
+*.sublime-workspace
+.vscode
