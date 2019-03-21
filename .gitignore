@@ -8,3 +8,7 @@
 *.sublime-project
 *.sublime-workspace
 .vscode
+
+project/target/
+project/project/
+target/

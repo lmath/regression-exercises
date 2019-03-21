@@ -1,6 +1,0 @@
-[0m[[0m[0mdebug[0m] [0m[0mCopy resource mappings: [0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/Users/Leigh-Anne_Mathieson/code/regression-exercises/src/main/resources/nlys-1999.csv,/Users/Leigh-Anne_Mathieson/code/regression-exercises/target/scala-2.12/classes/nlys-1999.csv)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/Users/Leigh-Anne_Mathieson/code/regression-exercises/src/main/resources/nlys-train.csv,/Users/Leigh-Anne_Mathieson/code/regression-exercises/target/scala-2.12/classes/nlys-train.csv)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/Users/Leigh-Anne_Mathieson/code/regression-exercises/src/main/resources/height-weight-test.csv,/Users/Leigh-Anne_Mathieson/code/regression-exercises/target/scala-2.12/classes/height-weight-test.csv)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/Users/Leigh-Anne_Mathieson/code/regression-exercises/src/main/resources/house-prices-training-data.csv,/Users/Leigh-Anne_Mathieson/code/regression-exercises/target/scala-2.12/classes/house-prices-training-data.csv)[0m
-[0m[[0m[0mdebug[0m] [0m[0m	(/Users/Leigh-Anne_Mathieson/code/regression-exercises/src/main/resources/nlys-test.csv,/Users/Leigh-Anne_Mathieson/code/regression-exercises/target/scala-2.12/classes/nlys-test.csv)[0m
