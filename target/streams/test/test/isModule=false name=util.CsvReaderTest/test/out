@@ -1,7 +1,0 @@
-[0m[[0m[0minfo[0m] [0m[0mCsvReaderTest[0m
-[0m[[0m[0minfo[0m] [0m[0mcsvFileToJson should[0m
-[0m[[0m[0minfo[0m] [0m[0m  [32m+[0m read a csv file[0m
-[0m[[0m[0minfo[0m] [0m[0m  [32m+[0m read a csv house prices file[0m
-[0m[[0m[0minfo[0m] [0m[0mTotal for specification CsvReaderTest[0m
-[0m[[0m[0minfo[0m] [0m[0m[36mFinished in 128 ms[0m[0m
-[0m[[0m[0minfo[0m] [0m[0m[36m[0m[36m2 examples, 0 failure, 0 error[0m[0m

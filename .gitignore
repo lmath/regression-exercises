@@ -8,3 +8,13 @@
 *.sublime-project
 *.sublime-workspace
 .vscode
+
+target/
+project/target/
+*.class
+*.jar
+*.war
+*.ear
+*.logs
+*.iml
+.idea/
