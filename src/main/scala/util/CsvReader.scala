@@ -4,39 +4,30 @@ import java.io._
 
 import scala.io.Source
 
+/**
+  * A truly terrible CSV reader
+  * It assumes you are reading CSV files that are in the data directory,
+  * and you need to pass in a transformer that will convert a row to a
+  * case class.
+  */
 object CsvReader {
 
-  def testResourceFile(fileName: String): File = {
-    val classLoader = getClass().getClassLoader()
-    new File(classLoader.getResource(fileName).getFile())
+  def getListOfFiles(dir: String): List[File] = {
+    val d = new File(dir)
+    if (d.exists && d.isDirectory) {
+      d.listFiles.filter(_.isFile).toList
+    } else {
+      List[File]()
+    }
   }
 
-  //TODO: have one function for this
   def asCaseClassList[T](csvFile: String, hasHeader: Boolean, transformer: Array[String] => T): List[T] = {
     import scala.collection.mutable.ListBuffer
 
-    val fileStream: InputStream = getClass.getResourceAsStream(s"$csvFile")
-    val lines: Iterator[String] = Source.fromInputStream(fileStream).getLines
+    val files = getListOfFiles("data")
+    val file = files.find(file => file.getName == csvFile)
 
-    var horribleMutableList = new ListBuffer[T]()
-    val iterator = if(hasHeader) lines.drop(1) else lines
-
-    for (line <- iterator) {
-      val cols: Array[String] = line.split(",").map(_.trim)
-      val newItem = transformer(cols)
-      horribleMutableList += newItem
-    }
-    fileStream.close
-
-    horribleMutableList.toList
-  }
-
-  def asCaseClassListFromTestResource[T](csvFile: String, hasHeader: Boolean, transformer: Array[String] => T): List[T] = {
-    import scala.collection.mutable.ListBuffer
-
-    val file = testResourceFile(csvFile)
-
-    val bufferedSource = scala.io.Source.fromFile(file)
+    val bufferedSource = scala.io.Source.fromFile(file.get)
     val iterator = if(hasHeader) bufferedSource.getLines().drop(1) else bufferedSource.getLines()
 
     var horribleMutableList = new ListBuffer[T]()
@@ -50,6 +41,7 @@ object CsvReader {
 
     horribleMutableList.toList
   }
+
 }
 
 object CSVWriter {
