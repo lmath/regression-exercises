@@ -9,13 +9,9 @@
 *.sublime-workspace
 .vscode
 
-target/
 project/target/
 project/project/
-*.class
+target/
 *.jar
-*.war
-*.ear
 *.logs
 *.iml
-.idea/

@@ -15,8 +15,8 @@ import util.CsvReader
 
 object PlotStuffApp {
 
-    def transformer(strings: Array[String]) = House(strings(0), strings(4).toDouble, strings(80).toDouble)
-    val housePrices = CsvReader.asCaseClassList("main/resources/house-prices-training-data.csv", true, transformer)
+    def transformer(strings: Array[String]) = House(strings(0), strings(1).toDouble, strings(2).toDouble)
+    val housePrices = CsvReader.asCaseClassList("house-prices-train.csv", true, transformer)
     val points = housePrices.map(d => Point(d.salePrice, d.lotArea))
 
     val labelledPlot = ScatterPlot(
@@ -41,7 +41,7 @@ object PlotStuffApp {
     .standard()
     .render()
 
-//  displayPlot(functionPlot)
+  displayPlot(functionPlot)
 
 
   def main(args: Array[String]): Unit = {
