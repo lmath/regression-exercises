@@ -11,11 +11,11 @@ object GradientDescentAndCheckTestSetApp {
 
   def main(args: Array[String]): Unit = {
 
-    def arrayToHouse(strings: Array[String]) = House(strings(0), strings(4).toDouble, strings(80).toDouble)
+    def arrayToHouse(strings: Array[String]) = House(strings(0), strings(1).toDouble, strings(2).toDouble)
     def HouseTo2dPoint(data: List[House]) = data.map(dataPoint => SimplePoint(dataPoint.lotArea, dataPoint.salePrice))
 
     //load in the training data
-    val sizesPrices = CsvReader.asCaseClassList("/house-prices-training-data.csv", true, arrayToHouse)
+    val sizesPrices = CsvReader.asCaseClassList("house-prices-train.csv", true, arrayToHouse)
     val data = HouseTo2dPoint(sizesPrices)
     val normalisedData = FeatureScaler.meanNormalisedData(data)
 
@@ -37,7 +37,7 @@ object GradientDescentAndCheckTestSetApp {
 
 
     //load in test data
-    val housePricesTestData = CsvReader.asCaseClassList("/house-prices-test-data.csv", true, arrayToHouse)
+    val housePricesTestData = CsvReader.asCaseClassList("/house-prices-test.csv", true, arrayToHouse)
     val housePricesTestDataPoints = HouseTo2dPoint(housePricesTestData)
     val housePricesTestDataScaled = FeatureScaler.meanNormalisedData(housePricesTestDataPoints)
 
