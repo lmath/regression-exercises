@@ -15,7 +15,7 @@ object GradientDescentApp {
     def houseTo2dPoint(data: List[House]) = data.map(dataPoint => SimplePoint(dataPoint.lotArea, dataPoint.salePrice))
 
     //load in the training data
-    val heightWeights = CsvReader.asCaseClassList("/nlys-train.csv", true, arrayToHouse)
+    val heightWeights = CsvReader.asCaseClassList("house-prices-train.csv", true, arrayToHouse)
     val data = houseTo2dPoint(heightWeights)
     val normalisedData = FeatureScaler.meanNormalisedData(data)
 
