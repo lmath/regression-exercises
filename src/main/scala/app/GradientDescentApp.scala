@@ -10,12 +10,13 @@ object GradientDescentApp {
 
   def main(args: Array[String]): Unit = {
 
-    def arrayToHouse(strings: Array[String]) = House(strings(0), strings(4).toDouble, strings(80).toDouble)
-    def HouseTo2dPoint(data: List[House]) = data.map(dataPoint => SimplePoint(dataPoint.lotArea, dataPoint.salePrice))
+//    def arrayToHouse(strings: Array[String]) = House(strings(0), strings(4).toDouble, strings(80).toDouble)
+    def arrayToHouse(strings: Array[String]) = House(strings(0), strings(1).toDouble, strings(2).toDouble)
+    def houseTo2dPoint(data: List[House]) = data.map(dataPoint => SimplePoint(dataPoint.lotArea, dataPoint.salePrice))
 
     //load in the training data
     val sizesPrices = CsvReader.asCaseClassList("house-prices-train.csv", true, arrayToHouse)
-    val data = HouseTo2dPoint(sizesPrices)
+    val data = houseTo2dPoint(sizesPrices)
     val normalisedData = FeatureScaler.meanNormalisedData(data)
 
     //run gradient descent
